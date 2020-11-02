@@ -1,0 +1,73 @@
+<div class="row mt-5 mb-5">
+  <div class="col-md-5 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> Register
+      </h1>
+      <% include ./partials/messages %>
+      <form action="/users/register" method="POST">
+        <div class="row">
+          <div class="form-group col">
+          <label for="name">Name</label>
+          <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
+        </div>
+        <div class="form-group col">
+          <label for="phone">Phone</label>
+          <input type="phone" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number" value="<%= typeof phone != 'undefined' ? phone : '' %>" />
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="form-group col">
+          <label for="gender">Select gender</label>
+          <select type="gender" id="gender" class="form-control float-left" id="gender" name="gender" value="<%= typeof gender != 'undefined' ? gender : '' %>" >
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group col">
+          <label for="age">Age</label>
+          <input type="number" min="10" max="55" id="age" name="age" class="form-control" placeholder="Enter Your Age" value="<%= typeof age != 'undefined' ? age : '' %>" />
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+          <label for="profession">Profession</label>
+          <input type="profession" id="profession" list="professions" name="profession" class="form-control" placeholder="Enter Profession" value="<%= typeof profession != 'undefined' ? profession : '' %>" />
+          <datalist id="professions">
+            <option value="Actor">Actor</option>
+            <option value="Model">Model</option>
+            <option value="Director">Director</option>
+            <option value="Singer">Singer</option>
+            <option value="Dancer">Dancer</option>
+            <option value="Photography">Photography</option>
+            <option value="Videography">Videography</option>
+            <option value="Story Writer">Story Writer</option>
+            <option value="Video Editor">Video Editor</option>
+        </datalist>
+        </div>
+        <div class="form-group col">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        <div class="form-group col">
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+        </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+      </form>
+      <p class="lead mt-4">Already Have An Account? <a href="/users/login">Login</a></p>
+    </div>
+  </div>
+</div>

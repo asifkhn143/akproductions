@@ -1,0 +1,43 @@
+<div class="row mt-5 mb-5">
+    <div class="col-md-5 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3"><i class="fas fa-file-upload"></i>  Upload File</h1>
+        <% include ./partials/messages %>
+        <form action="/users/uploadfile" method="POST">
+            
+            <div class="form-group">
+                <label for="filetype">File Type</label>
+                <div class="custom-control custom-radio mb-2">
+                  <input type="radio" id="type1" name="type" class="custom-control-input" value="Video">
+                  <label class="custom-control-label" for="type1"><i class="fa fa-file-video"> </i>  Video</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="type2" name="type" class="custom-control-input" value="Audio">
+                  <label class="custom-control-label" for="type2"><i class="fa fa-file-audio"></i>  Audio</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <input type="file" class="form-control-file" id="file" name="file" aria-describedby="fileHelp">
+              <small id="fileHelp" class="form-text text-muted">Upload Video or audio file here.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="filename">File Name</label>
+                <input class="form-control" id="filename" name="filename">
+            </div>
+          
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+            </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Upload</button>
+        </form>
+        <p class="lead mt-4 text-center">
+           <a href="videos">Cancel</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
